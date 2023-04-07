@@ -1,26 +1,9 @@
 // Assignment code here
-var lcaseCharCode = arrayFromLowToHigh(97, 122)
-var ucaseCharCode = arrayFromLowToHigh(65, 90)
-var numberCharCode= arrayFromLowToHigh(48, 57)
-var specialCharCode = arrayFromLowToHigh(33, 47).concat(
-  arrayFromLowToHigh(58, 64) 
-).concat(
-  arrayFromLowToHigh(91, 96)
-).concat(
-  arrayFromLowToHigh(123, 126)
-)
 
-
-function arrayFromLowToHigh(low, high) {
-  var array = []
-  for (let i = low; i <= high; i++){
-    array.push (i)
-  }
-  return array
-  //-- 2-18 is so I didn't have to type out a whole string of characters
-}; //-- ADD TO README SOURCES: learned lines 2-18 from: https://www.youtube.com/watch?v=iKo9pDKKHnc
-
-
+var lcaseChars = "asdfghjklqwertyuiopzxcvbnm"
+var ucaseChars = lcaseChars.toUpperCase
+var numberChars = "1234567890"
+var specialChars = "!'()*+,-./:;<=>?@[]$#%&^_`{|}~"
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");//--this targets the generate ID in the HTML + CSS
@@ -29,35 +12,63 @@ var generateBtn = document.querySelector("#generate");//--this targets the gener
 function generatePassword () {
   console.log ("this button still works!") //--making sure the button is working correctly
   // beginning of step one//
+
+
   var howManyChars = prompt("How many characters should the password be?", "Enter here");//--1. need to prompt for the different password criteria
-  
+ 
   //-- *These prompts begin when the generate password button has been clicked. as we know, the button works,
   //-- *so we need to add a prompt when it has been clicked
   //--  A. password length of 8-128 characters
-    if (howManyChars < 8){
-      alert("Error: Not a valid input. Must enter a number between 8 - 128");
-    } 
-    if (howManyChars > 128) {
-      alert("Error: Not a valid input. Must enter a number between 8 - 128");  //--for the character range, what happens if they chose a number not listed in that range
 
-    }
-    if (howManyChars >= 8 && howManyChars <= 128){
-      var includeLowCase = confirm("Would you like to include lowercase letters?");
-        if (includeLowCase === true){
-          var includeUpCase = confirm("Would you like to include uppercase letters?");
-            if (includeUpCase === true){
-              var includeSpecial = confirm("Would you like to include special characters?");
-                if (includeSpecial === true){
-                  var includeNumbers = confirm("Would you like to include numbers?");
-                  if (includeNumbers === true){
-                  } 
-              }
-            }
-          }
-        } else 
-          includeLowCase === false && includeNumbers === false && includeUpCase === false && includeSpecial === false
-          alert("Error: Must choose at least one character type")
-       
+  if (howManyChars < 8){
+    alert("Error: Not a valid input. Must enter a number between 8 - 128");
+  } 
+  if (howManyChars > 128) {
+     alert("Error: Not a valid input. Must enter a number between 8 - 128");  
+  }
+  var includeLowCase = confirm("Would you like to include lowercase letters?");
+    
+  var includeUpCase = confirm("Would you like to include uppercase letters?");
+   
+  var includeSpecial = confirm("Would you like to include special characters?");
+   
+  var includeNumbers = confirm("Would you like to include numbers?");
+  
+  
+  if (includeLowCase === true) charCodes = lcaseChars;
+  if (includeUpCase === true) charCodes = ucaseChars;
+  if (includeNumbers === true) charCodes = numberChars;
+  if (includeSpecial === true) charCodes = specialChars; 
+
+   // don't assign this bariable, leave it unassigned as a string "", make an if statement below
+    
+  if (includeLowCase) {
+    characters += lcaseChars
+  }
+
+  if (includeUpCase) {
+    characters += ucaseChars
+  }
+
+  if (includeNumbers) {
+   characters += numberChars
+  }
+
+  if (includeSpecial) {
+    characters += specialChars
+  }
+
+  let charCodes = ""
+
+
+  // after ifs build up password characters variable, 
+  //characters[0]// will get first character
+  // create random index
+  
+  for(var i=0; i < howManyChars; i++){
+   var randomIndex = somemath;
+   password += charCodes[randomIndex]//some math; 
+  }
   //--{{PSEUDO CODING
   
   //--  B. numbers, special characrers, uppercase, lowercase
@@ -89,13 +100,22 @@ function generatePassword () {
   //--  B. we know a string of "generated password here" appears in test, so as long as we don't screw anything up too much, it shouldn't break
   //-- }}
 
-  return "generated password here" //--must finish with an actural return value
+  return  //--must finish with an actural return value
 }
+
+
+function arrayFromLowToHigh(low, high) {
+  var array = []
+  for (let i = low; i <= high; i++){
+    array.push (i)
+  }
+  return array
+  //-- 2-18 is so I didn't have to type out a whole string of characters
+}; //-- ADD TO README SOURCES: learned lines 2-18 from: https://www.youtube.com/watch?v=iKo9pDKKHnc
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();//--an incomplete function.
-  //--being called but isn't defined (see console)
   var passwordText = document.querySelector("#password");//--this is where the generated password is displayed on the screen
  
   passwordText.value = password; //--takes the value from generated password and plugs it into what is displayed on the screen
