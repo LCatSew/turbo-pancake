@@ -1,6 +1,13 @@
 # turbo-pancake
 Module 3 homework
-# Password Generator Starter Code
+
+## Table of Contents
+
+- [User Story](#user_story)
+- [Acceptance Criteria](#acceptance_criteria)
+- [Contributing](#contributing)
+- [Screenshots](#screenshots)
+- [Links](#links)
 
 ## User Story
 
@@ -26,10 +33,14 @@ GIVEN I need a new, secure password
 * WHEN the password is generated
     *THEN the password is either displayed in an alert or written to the page
 
-## Final Results ScreenShots
+## Contributing  
+tutorials
+- https://www.youtube.com/watch?v=iKo9pDKKHnc&t=446s
 
-![Number of Characters](./Develop/assets/how-many-chars.png)
-![Lowercase](./Develop/assets/lowercase.png)
-![Uppercase](./Develop/assets/uppercase.png)
-![Numbers](./Develop/assets/numbers.png)
-![Special Characters](./Develop/assets/special-characters.png)
+## Screenshots
+
+![Number of Characters](./Develop/assets/images/how-many-chars.png)
+![Lowercase](./Develop/assets/images/lowercase.png)
+![Uppercase](./Develop/assets/images/uppercase.png)
+![Numbers](./Develop/assets/images/numbers.png)
+![Special Characters](./Develop/assets/images/special-characters.png)
